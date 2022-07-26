@@ -18,7 +18,7 @@ export const MovieContext = createContext<MoviesContextData>(
 )
 
 export const MovieProvider = ({ children }: ContextProp) => {
-  const [movieList, setMovieList] = useState<MoviesProps[] | null>([])
+  const [movieList, setMovieList] = useState<MoviesProps[]>([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
