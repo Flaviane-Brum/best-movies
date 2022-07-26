@@ -7,7 +7,6 @@ type ContextProp = {
 }
 interface MoviesContextData {
   movieList: MoviesProps[]
-  setMovieList: React.Dispatch<React.SetStateAction<MoviesProps[]>>
   loading: boolean
   setLoading: (state: boolean) => void
 }
@@ -42,9 +41,7 @@ export const MovieProvider = ({ children }: ContextProp) => {
   }, [])
 
   return (
-    <MovieContext.Provider
-      value={{ movieList, loading, setLoading, setMovieList }}
-    >
+    <MovieContext.Provider value={{ movieList, loading, setLoading }}>
       {children}
     </MovieContext.Provider>
   )
